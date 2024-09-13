@@ -1,47 +1,45 @@
 # [論文實做筆記](https://hackmd.io/@YaoT/SyVvwQh6T)
 - [Github連結](https://github.com/qazasmoo677/CYCU_Research)
-## 檔案位置參考
+## 檔案路徑參考
 > Code
 > ├─Model (論文模型以及對照模型的Code)
-> │&nbsp;&nbsp;├─GraphRec_pt (論文模型)
-> │&nbsp;&nbsp;│&nbsp;&nbsp;├─data (實驗比較的資料集)
-> │&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─v1.1 (use MeanShift 0.001, time 1hr)
-> │&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─v1.2 (use MeanShift 0.005, time 1hr)
-> │&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─v1.3 (use MeanShift 0.01, time 1hr)
-> │&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─v1.4 (use MeanShift 0.015, time 1hr)
-> │&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─v1.5 (use MeanShift 0.02, time 1hr)
-> │&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─v2.1 (use DBSCAN 0.001, time 1hr)
-> │&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─v2.2 (use DBSCAN 0.005, time 1hr)
-> │&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─v2.3 (use DBSCAN 0.01, time 1hr)
-> │&nbsp;&nbsp;│&nbsp;&nbsp;│&nbsp;&nbsp;├─v2.4 (use DBSCAN 0.015, time 1hr)
-> │&nbsp;&nbsp;│&nbsp;&nbsp;└─ └─v2.5 (use DBSCAN 0.02, time 1hr)
-> │&nbsp;&nbsp;├─RoBERTa_pt (情感語意分析模型)
-> │&nbsp;&nbsp;└─對照方法
-> │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─1.SVD
-> │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─2.CMF
-> │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─3.User-based, Item-based
-> │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─4.IMP_GCN
-> │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─5.DANSER
-> │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─6.LightGCN
+> &nbsp;│&nbsp;&nbsp;├─GraphRec_pt (論文模型)
+> &nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;└─data (實驗比較的資料集)
+> &nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ (可以像這樣創不同資料夾存不同參數的final.pkl)
+> &nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ v1.1 (use MeanShift 0.001, time 1hr)
+> &nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ v1.2 (use MeanShift 0.005, time 1hr)
+> &nbsp;│&nbsp;&nbsp;├─RoBERTa_pt (情感語意分析模型)
+> &nbsp;│&nbsp;&nbsp;└─對照方法
+> &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─1.SVD
+> &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─2.CMF
+> &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─3.User-based, Item-based
+> &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─4.IMP_GCN
+> &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─5.DANSER
+> &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─6.LightGCN
 > └─Preprocessing (資料篩選的Code)
 ## 前置作業
 ### CUDA
 :::success
 #### 說明
-- [安裝教學](https://medium.com/ching-i/win10-%E5%AE%89%E8%A3%9D-cuda-cudnn-%E6%95%99%E5%AD%B8-c617b3b76deb)
+- [CUDA 安裝教學](https://medium.com/ching-i/win10-%E5%AE%89%E8%A3%9D-cuda-cudnn-%E6%95%99%E5%AD%B8-c617b3b76deb)
 :::
 ### MongoDB
 :::info
 #### 說明
-- [安裝 MongoDB 教學](https://dotblogs.com.tw/explooosion/2018/01/21/040728)
+- [MongoDB 安裝教學](https://dotblogs.com.tw/explooosion/2018/01/21/040728)
 - [MongoDB 語法文件](https://www.mongodb.com/docs/manual/tutorial/query-documents/)
     - 裡面有Python Code可以參考
 :::
 ### 資料篩選
 :::warning
+#### 相關檔案路徑
+> Preprocessing
+> ├── DataConverter·py (資料格式轉換 Json -> CSV)
+> ├── Preprocessing·ipynb (資料篩選)
+> └── Visualization·ipynb (資料視覺化)
 #### 資料集
 - 資料集使用[Yelp Dataset](https://www.yelp.com/dataset)
-#### 版本
+#### 軟體版本
 - [MongoDB Community Server v7.0.8](https://www.mongodb.com/try/download/community-kubernetes-operator)
 - [Navicat Premium 16](https://navicat.com/cht/products/navicat-premium)
 #### 環境
@@ -183,6 +181,9 @@ db.getCollection("business").aggregate([
 #### 說明
 [參考資料](https://github.com/DhavalTaunk08/NLP_scripts/blob/master/sentiment_analysis_using_roberta.ipynb)
 - 先確定有沒有啟用CUDA，速度差很多
+#### 相關檔案路徑
+> RoBERTa_pt
+> └── GetSentimentToMongo.ipynb (評論情感語義分析)
 #### 環境
 - python 3.11
 - CUDA 12.4
@@ -205,6 +206,28 @@ db.getCollection("business").aggregate([
 :::warning
 #### 說明
 [參考資料](https://github.com/wenqifan03/GraphRec-WWW19)
+#### 相關檔案路徑
+> GraphRec_pt
+> ├── 0.GraphRec·py (聚合User-POI和社交特徵，沒有聚合POI分群特徵)
+> ├── 1.GraphRec_onlyPOI·py (聚合User-POI、社交特徵、POI分群特徵)
+> ├── 2.GraphRec_Sentiment·py (聚合User-POI、社交特徵、POI分群特徵、情感語義特徵)
+> ├── 3.GraphRec_All·py (聚合User-POI、社交特徵、POI分群特徵、情感語義特徵、時間特徵)
+> ├── 98.Preprocessing·ipynb (資料前處理，編碼、刪除空值等等)
+> ├── 99.MongoToPKL·ipynb (將MongoDB的資料存成pickle)
+> ├── Attention·py (注意力機制)
+> ├── Evaluation·py (評估指標)
+> ├── POI_Aggregators·py (POI聚合器)
+> ├── POI_Encoders·py (POI編碼器)
+> ├── SentimentAndTimeGNNCombiner·py (結合原始分數、情感特徵、時間特徵的MLP)
+> ├── SentimentGNNCombiner·py (結合原始分數與情感特徵的MLP)
+> ├── Social_Aggregators·py (社交關係聚合器)
+> ├── Social_Encoders·py (社交關係編碼器)
+> ├── TimeGNNCombiner·py (結合原始分數與時間特徵的MLP)
+> ├── UV_Aggregators·py (POI-User聚合器)
+> ├── UV_Encoders·py (POI-User編碼器)
+> └── data
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── （要跑的pickle放這裡）
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── final.pkl
 #### 環境
 - python 3.6
 - CUDA 9.0
@@ -231,69 +254,38 @@ db.getCollection("business").aggregate([
     - 加上參數的指令範例 
         - python 0.GraphRec.py \-\-embed_dim 64 \-\-lr 0.01
 :::
-### 對照模型1: xxx
+### 對照模型1: SVD
 :::success
 #### 說明
-123
-#### 環境
-123
-#### 套件
-123
-#### 步驟
-123
+[參考資料](https://github.com/unclebrod/YelpRecommender)
 :::
-### 對照模型2: xxx
+### 對照模型2: PMF
 :::info
 #### 說明
-123
-#### 環境
-123
-#### 套件
-123
-#### 步驟
-123
+[參考資料](https://github.com/fuhailin/Probabilistic-Matrix-Factorization/tree/master)
 :::
-### 對照模型3: xxx
+### 對照模型3: User-based, Item-based
 :::warning
 #### 說明
-123
-#### 環境
-123
-#### 套件
-123
-#### 步驟
-123
+[參考資料](https://github.com/rahmanidashti/LRSbasics/blob/master/Recommender%20Systems%20Algorithms.ipynb)
 :::
-### 對照模型4: xxx
+### 對照模型4: IMP_GCN
 :::success
 #### 說明
-123
-#### 環境
-123
-#### 套件
-123
-#### 步驟
-123
+[參考資料](https://github.com/liufancs/IMP_GCN)
 :::
-### 對照模型5: xxx
+### 對照模型5: DANSER
 :::info
 #### 說明
-123
-#### 環境
-123
-#### 套件
-123
-#### 步驟
-123
+[參考資料](https://github.com/qitianwu/DANSER-WWW-19)
 :::
-### 對照模型6: xxx
+### 對照模型6: LightGCN
 :::warning
 #### 說明
-123
-#### 環境
-123
-#### 套件
-123
-#### 步驟
-123
+[參考資料](https://github.com/kuandeng/LightGCN)
+:::
+### 其他以GNN為基礎的對照模型
+:::success
+#### 說明
+[參考資料](https://github.com/tsinghua-fib-lab/GNN-Recommender-Systems)
 :::
