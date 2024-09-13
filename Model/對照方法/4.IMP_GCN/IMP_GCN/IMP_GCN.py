@@ -1,7 +1,10 @@
-'''
-@author: Liu Fan
-python IMP_GCN.py --dataset yelp  --regs [1e-4] --embed_size 64 --layer_size [64,64,64,64,64,64] --lr 0.001 --batch_size 2048 --epoch 1 --groups 3 --Ks [5,10,15,20] --gpu_id 0
-'''
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+說明：
+    IMP_GCN模型主程式
+    執行範例：python IMP_GCN.py --dataset yelp  --regs [1e-4] --embed_size 64 --layer_size [64,64,64,64,64,64] --lr 0.001 --batch_size 2048 --epoch 1 --groups 3 --Ks [5,10,15,20] --gpu_id 0
+注意事項：
+    需準備資料集
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 import tensorflow as tf
 import os
 import sys

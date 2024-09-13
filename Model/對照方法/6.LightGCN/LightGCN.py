@@ -1,14 +1,10 @@
-'''
-Created on Oct 10, 2018
-Tensorflow Implementation of Neural Graph Collaborative Filtering (NGCF) model in:
-Wang Xiang et al. Neural Graph Collaborative Filtering. In SIGIR 2019.
-@author: Xiang Wang (xiangwang@u.nus.edu)
-version:
-Parallelized sampling on CPU
-C++ evaluation for top-k recommendation
-python LightGCN.py --dataset yelp --regs [1e-4] --embed_size 64 --layer_size [64,64,64] --lr 0.001 --batch_size 2048 --epoch 10 --Ks [10,20]
-'''
-
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+說明：
+    LightGCN主程式
+    執行範例：python LightGCN.py --dataset yelp --regs [1e-4] --embed_size 64 --layer_size [64,64,64] --lr 0.001 --batch_size 2048 --epoch 10 --Ks [10,20]
+注意事項：
+    需準備資料集
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 import os
 import sys
 import threading

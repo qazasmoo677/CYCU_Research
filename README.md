@@ -1,4 +1,5 @@
-# 論文實做筆記
+# [論文實做筆記](https://hackmd.io/@YaoT/SyVvwQh6T)
+- [Github連結](https://github.com/qazasmoo677/CYCU_Research)
 ## 檔案位置參考
 > Code
 > ├─Model (論文模型以及對照模型的Code)

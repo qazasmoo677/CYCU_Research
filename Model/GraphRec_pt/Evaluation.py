@@ -1,5 +1,12 @@
-import numpy as np
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+說明：
+    評估指標的Class，要新增或改公式都在這裡
 
+注意事項：
+    無
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+import numpy as np
 class Evaluation():
     def checkNeedCalcUser(self, predicted, actual):
         if len(actual) > len(predicted):
