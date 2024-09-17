@@ -11,7 +11,7 @@
 > &nbsp;│&nbsp;&nbsp;├─RoBERTa_pt (情感語意分析模型)
 > &nbsp;│&nbsp;&nbsp;└─對照方法
 > &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─1.SVD
-> &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─2.CMF
+> &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─2.PMF
 > &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─3.User-based, Item-based
 > &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─4.IMP_GCN
 > &nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─5.DANSER
@@ -258,31 +258,64 @@ db.getCollection("business").aggregate([
 :::success
 #### 說明
 [參考資料](https://github.com/unclebrod/YelpRecommender)
+#### 環境
+- 無
+#### 套件
+- 無
 :::
 ### 對照模型2: PMF
 :::info
 #### 說明
 [參考資料](https://github.com/fuhailin/Probabilistic-Matrix-Factorization/tree/master)
+#### 環境
+- 無
+#### 套件
+- 無
 :::
 ### 對照模型3: User-based, Item-based
 :::warning
 #### 說明
 [參考資料](https://github.com/rahmanidashti/LRSbasics/blob/master/Recommender%20Systems%20Algorithms.ipynb)
+#### 環境
+- 無
+#### 套件
+- 無
 :::
 ### 對照模型4: IMP_GCN
 :::success
 #### 說明
 [參考資料](https://github.com/liufancs/IMP_GCN)
+#### 環境
+- python 3.6.13
+- CUDA 10.0
+#### 套件
+- tensorflow 1.7
+- scikit-learn 0.24.2
+- numpy 1.19.5
 :::
-### 對照模型5: DANSER
+### 對照模型5: DANSER (環境同IMP_GCN)
 :::info
 #### 說明
 [參考資料](https://github.com/qitianwu/DANSER-WWW-19)
+#### 環境
+- python 3.6.13
+- CUDA 10.0
+#### 套件
+- tensorflow 1.7
+- scikit-learn 0.24.2
+- numpy 1.19.5
 :::
-### 對照模型6: LightGCN
+### 對照模型6: LightGCN ((環境同IMP_GCN))
 :::warning
 #### 說明
 [參考資料](https://github.com/kuandeng/LightGCN)
+#### 環境
+- python 3.6.13
+- CUDA 10.0
+#### 套件
+- tensorflow 1.7
+- scikit-learn 0.24.2
+- numpy 1.19.5
 :::
 ### 其他以GNN為基礎的對照模型
 :::success
